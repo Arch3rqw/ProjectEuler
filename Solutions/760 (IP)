@@ -1,0 +1,22 @@
+def g(m, n):
+  return (m|n)
+
+def firstSum(n):
+  returnSum = 0
+  for i in range((n // 2) + 1):  # Only go up to n // 2
+      if i == n - i:  # Handle the midpoint case (only for even n)
+          returnSum += g(i, n - i)
+      else:
+          returnSum += 2 * g(i, n - i)  # Double the contribution
+  return 2*returnSum
+
+
+def secondSum(N):
+  returnSum2 = 0
+  for i in range(0,N+1):
+    returnSum2 += firstSum(i)
+  return returnSum2
+
+
+
+print(secondSum(10**18))
