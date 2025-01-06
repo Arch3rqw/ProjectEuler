@@ -1,3 +1,5 @@
+#This code should work in theory but the problem is that the runtime is way too long
+
 def g(m, n):
   return (m|n)
 
